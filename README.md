@@ -79,40 +79,26 @@ Sebuah kelas turunan (subclass) dapat mewarisi atribut dan metode dari kelas ind
 
 Contoh:
 
-// Kelas Induk
-public class Transaksi {
-    private LocalDate tanggal;
-    private int jumlah;
-  
+public class BarangMasukController implements Initializable {
+    // ...
 }
 
-// Kelas Turunan
-public class TransaksiMasuk extends Transaksi {
-    private String namaPemasok;
-    // Mewarisi 'tanggal' dan 'jumlah' dari kelas Transaksi
-}
+implements Initializable adalah bentuk Inheritance. Kelas BarangMasukController Anda "mewarisi" sebuah kontrak dari interface bernama Initializable yang disediakan oleh JavaFX.
 
 c. Polymorphism (Polimorfisme)
 Kemampuan objek untuk merespons secara berbeda terhadap pemanggilan metode yang sama, tergantung pada tipe aktual objek tersebut. Hal ini sering dicapai melalui method overriding.
 
 Contoh:
-
-public abstract class Laporan {
-    public abstract void tampilkanLaporan();
+// di file Barang.java
+@Override
+public String toString() {
+    return getNamaBarang();
 }
 
-public class LaporanBarangMasuk extends Laporan {
-    @Override
-    public void tampilkanLaporan() {
-        System.out.println("Menampilkan laporan detail barang masuk...");
-    }
-}
-
-public class LaporanBarangKeluar extends Laporan {
-    @Override
-    public void tampilkanLaporan() {
-        System.out.println("Menampilkan laporan detail barang keluar...");
-    }
+// di file BarangKeluarItem.java
+@Override
+public String toString() {
+    return getNamaBarang();
 }
 
 d. Abstraction (Abstraksi)
@@ -120,16 +106,13 @@ Menyembunyikan detail implementasi yang kompleks dan hanya menampilkan fungsiona
 
 Contoh:
 
-public interface TransaksiInterface {
-    void simpan();
-    void hapus();
-    void update();
-}
 
-public class BarangMasukController implements TransaksiInterface {
-    @Override
-    public void simpan() {
-        // Logika untuk menyimpan data barang masuk
+// di file Barang.java
+public class Barang {
+    private final SimpleStringProperty namaBarang;
+    // ... detail implementasi lainnya
+
+    public String getNamaBarang() {
+        return namaBarang.get();
     }
-    
 }
