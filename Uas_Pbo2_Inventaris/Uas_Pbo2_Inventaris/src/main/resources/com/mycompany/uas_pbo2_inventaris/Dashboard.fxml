@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #e0e0e0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.uas_pbo2_inventaris.DashboardController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="25.0" layoutY="25.0" prefHeight="450.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #003366; -fx-background-radius: 10;">
+         <children>
+            <Label text="MENU NAVIGASI" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="btnDataBarang" mnemonicParsing="false" onAction="#openDataBarang" prefHeight="40.0" prefWidth="160.0" text="Data Barang" />
+            <Button fx:id="btnBarangMasuk" mnemonicParsing="false" onAction="#openBarangMasuk" prefHeight="40.0" prefWidth="160.0" text="Barang Masuk" />
+            <Button fx:id="btnBarangKeluar" mnemonicParsing="false" onAction="#openBarangKeluar" prefHeight="40.0" prefWidth="160.0" text="Barang Keluar" />
+            <Button fx:id="btnLaporan" mnemonicParsing="false" onAction="#openLaporan" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #f37021; -fx-text-fill: white;" text="Laporan" />
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #f37021; -fx-text-fill: white;" text="Logout" />
+         </children>
+      </VBox>
+      <AnchorPane layoutX="250.0" layoutY="25.0" prefHeight="450.0" prefWidth="425.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="33.0" layoutY="35.0" text="Selamat Datang di Sistem Inventaris" textFill="#003366">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNamaUser" layoutX="33.0" layoutY="80.0" text="Nama Pengguna">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblRoleUser" layoutX="33.0" layoutY="110.0" text="(Role)">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+             <Label layoutX="33.0" layoutY="180.0" text="Gunakan menu di samping untuk mengelola&#10;data inventaris gudang." wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
