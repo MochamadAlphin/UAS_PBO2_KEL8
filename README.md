@@ -14,7 +14,7 @@ Aplikasi ini dibangun berbasis **JavaFX** dan menerapkan prinsip **Object-Orient
 Aplikasi ini dilengkapi dengan berbagai fitur manajemen inventaris yang komprehensif:
 
 - **🔐 Login & Role-Based Access**  
-  Autentikasi pengguna berdasarkan peran: `Admin`, `Petugas Gudang`, dan `Supervisor`.
+  Autentikasi pengguna berdasarkan peran: `Admin`, `Petugas Gudang`, dan `Manajer`.
 
 - **📊 Dashboard**  
   Menampilkan ringkasan seperti jumlah total barang, transaksi terakhir, dan status stok.
@@ -40,9 +40,9 @@ Aplikasi ini dilengkapi dengan berbagai fitur manajemen inventaris yang komprehe
 
 | Aktor           | Tugas                                                                 |
 |----------------|-----------------------------------------------------------------------|
-| **Admin**       | Kelola user, kategori barang, lokasi penyimpanan. Akses penuh sistem. |
+| **Admin**       | Melihat Data Barang |
 | **Petugas Gudang** | Input transaksi masuk & keluar, kelola data barang.                   |
-| **Supervisor**  | Melihat laporan, ambil keputusan terkait stok & pengadaan.            |
+| **Manajer**  | Melihat laporan, ambil keputusan terkait stok & pengadaan.            |
 
 ---
 
