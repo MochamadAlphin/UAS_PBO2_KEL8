@@ -1,118 +1,112 @@
-# UAS_PBO2_KEL8
+# 📦 UAS_PBO2_KEL8 - Laporan Aplikasi Inventaris Barang
 
-📦 Laporan Aplikasi Inventaris Barang
-1. Latar Belakang
+## 1. Latar Belakang
+
 Pengelolaan barang di gudang merupakan aktivitas penting dalam rantai pasokan perusahaan. Banyak gudang masih mencatat inventaris secara manual atau menggunakan spreadsheet sederhana yang rawan terhadap kesalahan pencatatan, kehilangan data, dan duplikasi informasi.
 
-Sistem Informasi Inventaris Gudang ini bertujuan untuk menyediakan solusi digital yang membantu admin gudang dan manajemen dalam memantau pergerakan stok, memprediksi kebutuhan pengadaan, serta menjaga efisiensi operasional. Aplikasi ini adalah sistem manajemen inventaris barang berbasis JavaFX dan dirancang menggunakan prinsip Object-Oriented Programming (OOP) untuk memastikan kode yang modular, dapat digunakan kembali, dan mudah dikelola.
+**Sistem Informasi Inventaris Gudang** ini bertujuan untuk menyediakan solusi digital yang membantu admin gudang dan manajemen dalam memantau pergerakan stok, memprediksi kebutuhan pengadaan, serta menjaga efisiensi operasional.  
+Aplikasi ini dibangun berbasis **JavaFX** dan menerapkan prinsip **Object-Oriented Programming (OOP)** agar kode lebih modular, reusable, dan mudah dikelola.
 
-2. Fitur Utama
-Aplikasi ini dilengkapi dengan berbagai fitur untuk manajemen inventaris yang komprehensif.
+---
 
-- Login & Role-Based Access
+## 2. Fitur Utama
 
-Sistem autentikasi untuk memastikan hanya pengguna terdaftar yang dapat mengakses sistem. Hak akses dibagi berdasarkan peran (Admin, Petugas Gudang, Supervisor).
+Aplikasi ini dilengkapi dengan berbagai fitur manajemen inventaris yang komprehensif:
 
-- Dashboard
+- **🔐 Login & Role-Based Access**  
+  Autentikasi pengguna berdasarkan peran: `Admin`, `Petugas Gudang`, dan `Supervisor`.
 
-Halaman utama yang menampilkan ringkasan data penting seperti jumlah barang, transaksi masuk terakhir, dan transaksi keluar terakhir.
+- **📊 Dashboard**  
+  Menampilkan ringkasan seperti jumlah total barang, transaksi terakhir, dan status stok.
 
-- Manajemen Data Barang
+- **📦 Manajemen Data Barang**  
+  Fitur **CRUD** untuk data barang (kode, nama, kategori, stok).
 
-Fungsi CRUD (Create, Read, Update, Delete) untuk mengelola data barang, termasuk kode, nama, kategori, dan jumlah stok.
+- **📥 Transaksi Barang Masuk**  
+  Form input barang masuk yang otomatis memperbarui stok.
 
-- Transaksi Barang Masuk
+- **📤 Transaksi Barang Keluar**  
+  Pencatatan pengeluaran barang untuk penjualan atau penggunaan internal.
 
-Formulir khusus untuk mencatat setiap barang yang masuk ke gudang, memperbarui stok secara otomatis.
+- **📑 Monitoring & Laporan**  
+  Laporan barang masuk, keluar, dan stok saat ini (bisa difilter).
 
-- Transaksi Barang Keluar
+- **🔔 Notifikasi Stok**  
+  Sistem memberi peringatan jika stok barang mencapai batas minimum.
 
-Formulir untuk mencatat barang yang keluar dari gudang, baik untuk penjualan maupun penggunaan internal.
+---
 
-- Monitoring & Laporan
+## 3. Aktor dalam Sistem
 
-Menyediakan laporan aktivitas inventaris (barang masuk, keluar, dan stok saat ini) yang dapat difilter berdasarkan periode tertentu.
+| Aktor           | Tugas                                                                 |
+|----------------|-----------------------------------------------------------------------|
+| **Admin**       | Kelola user, kategori barang, lokasi penyimpanan. Akses penuh sistem. |
+| **Petugas Gudang** | Input transaksi masuk & keluar, kelola data barang.                   |
+| **Supervisor**  | Melihat laporan, ambil keputusan terkait stok & pengadaan.            |
 
-- Notifikasi Stok
+---
 
-Sistem akan memberikan notifikasi otomatis jika stok barang mencapai batas minimum yang telah ditentukan.
+## 4. Penerapan Konsep OOP
 
-3. Aktor dalam Sistem
-Berikut adalah peran pengguna yang terlibat dalam sistem dan tugas utamanya:
+### a. Encapsulation (Enkapsulasi)
 
-- Admin
+Menyatukan data dan method dalam kelas. Akses data dikendalikan via getter/setter.
 
-Mengelola data pengguna (tambah, ubah), kategori barang, dan lokasi penyimpanan. Memiliki akses penuh ke semua fitur.
-
-- Petugas Gudang
-
-Mencatat transaksi barang masuk dan keluar, serta mengelola data stok barang.
-
-- Supervisor
-
-Melihat laporan stok dan transaksi untuk membuat keputusan terkait pengadaan atau strategi bisnis.
-
-4. Penerapan Konsep OOP
-Aplikasi ini menerapkan konsep-konsep inti Object-Oriented Programming (OOP) berikut:
-
-a. Encapsulation (Enkapsulasi)
-Data (atribut) dan operasi (metode) yang terkait dibungkus menjadi satu kesatuan dalam sebuah kelas. Akses ke atribut dikontrol melalui metode getter dan setter untuk menjaga integritas data.
-
-Contoh:
-
+```java
 public class Barang {
     private String kode;
     private String nama;
     private int stok;
 
-  public String getKode() { 
+    public String getKode() { 
         return kode; 
     }
-    
-public void setKode(String kode) { 
-        this.kode = kode;
-    }
+
+    public void setKode(String kode) { 
+        this.kode = kode;
+    }
 }
 
+```
 b. Inheritance (Pewarisan)
-Sebuah kelas turunan (subclass) dapat mewarisi atribut dan metode dari kelas induknya (superclass). Ini berguna untuk menghindari duplikasi kode.
+Subclass mewarisi method dari superclass. Contoh: BarangMasukController mewarisi kontrak dari Initializable.
 
-Contoh:
 
+```java
 public class BarangMasukController implements Initializable {
     // ...
 }
 
-implements Initializable adalah bentuk Inheritance. Kelas BarangMasukController Anda "mewarisi" sebuah kontrak dari interface bernama Initializable yang disediakan oleh JavaFX.
-
+```
 c. Polymorphism (Polimorfisme)
-Kemampuan objek untuk merespons secara berbeda terhadap pemanggilan metode yang sama, tergantung pada tipe aktual objek tersebut. Hal ini sering dicapai melalui method overriding.
+Method yang sama memberikan respons berbeda tergantung objeknya. Contoh: toString() di-overridden.
 
-Contoh:
-// di file Barang.java
+```java
+// Di file Barang.java
 @Override
 public String toString() {
     return getNamaBarang();
 }
 
-// di file BarangKeluarItem.java
+// Di file BarangKeluarItem.java
 @Override
 public String toString() {
     return getNamaBarang();
 }
+
+```
 
 d. Abstraction (Abstraksi)
-Menyembunyikan detail implementasi yang kompleks dan hanya menampilkan fungsionalitas yang esensial kepada pengguna. Abstraksi dapat dicapai dengan menggunakan abstract class atau interface.
+Menyembunyikan detail dan hanya menunjukkan antarmuka penting ke pengguna.
+```java
 
-Contoh:
-
-
-// di file Barang.java
+// Di file Barang.java
 public class Barang {
     private final SimpleStringProperty namaBarang;
-    // ... detail implementasi lainnya
 
     public String getNamaBarang() {
         return namaBarang.get();
     }
 }
+
+
