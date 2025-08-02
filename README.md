@@ -109,4 +109,5 @@ public class Barang {
     }
 }
 
-
+```
+Dokumentasi aplikasi pbo2 : https://drive.google.com/file/d/1KAPy1WltU9Bp6Pae98y9k-UWomQYSwDv/view
