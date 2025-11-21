@@ -53,10 +53,8 @@ Halaman Register
 <img width="940" height="588" alt="image" src="https://github.com/user-attachments/assets/9d9d2ad3-33ec-4ede-82a2-50f40522e59a" />
 
 Logic If
-<img width="940" height="661" alt="image" src="https://github.com/user-attachments/assets/02484e67-3bbc-4bc6-81d9-ac5ec2faf0ee" />
 
-Footer Halaman
-<img width="940" height="24" alt="image" src="https://github.com/user-attachments/assets/6dccebf8-eec3-4a55-970d-4d9316f720ed" />
+<img width="940" height="661" alt="image" src="https://github.com/user-attachments/assets/02484e67-3bbc-4bc6-81d9-ac5ec2faf0ee" />
 
 kirim paket
 <img width="2559" height="1599" alt="image" src="https://github.com/user-attachments/assets/e032d607-8f41-4912-9f54-a361442e1b84" />
