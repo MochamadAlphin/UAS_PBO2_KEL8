@@ -58,6 +58,12 @@ Logic If
 Footer Halaman
 <img width="940" height="24" alt="image" src="https://github.com/user-attachments/assets/6dccebf8-eec3-4a55-970d-4d9316f720ed" />
 
+kirim paket
+<img width="2559" height="1599" alt="image" src="https://github.com/user-attachments/assets/e032d607-8f41-4912-9f54-a361442e1b84" />
+
+Cek Resi 
+<img width="2559" height="1599" alt="image" src="https://github.com/user-attachments/assets/05ea5c76-1514-4e7d-bff7-7932820e5ec7" />
+
 Crud Api Menggunakan Bruno
 <img width="940" height="588" alt="image" src="https://github.com/user-attachments/assets/d4c8a810-3351-4036-a64c-4a58a269339e" />
 
