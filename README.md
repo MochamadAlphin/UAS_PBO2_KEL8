@@ -1,113 +1,57 @@
-# 📦 UAS_PBO2_KEL8 - Laporan Aplikasi Inventaris Barang
+#  Lariin - Layanan Kirim Indonesia
 
-## 1. Latar Belakang
+## 1.  Latar Belakang
 
-Pengelolaan barang di gudang merupakan aktivitas penting dalam rantai pasokan perusahaan. Banyak gudang masih mencatat inventaris secara manual atau menggunakan spreadsheet sederhana yang rawan terhadap kesalahan pencatatan, kehilangan data, dan duplikasi informasi.
+Aplikasi **Lariin** dikembangkan sebagai sistem sederhana namun fungsional untuk membantu proses pengiriman paket. Saat ini masih banyak UMKM dan kurir independen yang melakukan pencatatan pengiriman secara manual, yang rentan terhadap kehilangan data, salah input, dan kurang efisien.
 
-**Sistem Informasi Inventaris Gudang** ini bertujuan untuk menyediakan solusi digital yang membantu admin gudang dan manajemen dalam memantau pergerakan stok, memprediksi kebutuhan pengadaan, serta menjaga efisiensi operasional.  
-Aplikasi ini dibangun berbasis **JavaFX** dan menerapkan prinsip **Object-Oriented Programming (OOP)** agar kode lebih modular, reusable, dan mudah dikelola.
+Dengan aplikasi Lariin, pengguna dapat:
 
----
+* Menginput pengiriman barang
+* Mendapatkan nomor resi otomatis
+* Melihat bukti pengiriman
+* Mencetak bukti pengiriman
+* Melacak status pengiriman berdasarkan resi
 
-## 2. Fitur Utama
-
-Aplikasi ini dilengkapi dengan berbagai fitur manajemen inventaris yang komprehensif:
-
-- **🔐 Login & Role-Based Access**  
-  Autentikasi pengguna berdasarkan peran: `Admin`, `Petugas Gudang`, dan `Manajer`.
-
-- **📊 Dashboard**  
-  Menampilkan ringkasan seperti jumlah total barang, transaksi terakhir, dan status stok.
-
-- **📦 Manajemen Data Barang**  
-  Fitur **CRUD** untuk data barang (kode, nama, kategori, stok).
-
-- **📥 Transaksi Barang Masuk**  
-  Form input barang masuk yang otomatis memperbarui stok.
-
-- **📤 Transaksi Barang Keluar**  
-  Pencatatan pengeluaran barang untuk penjualan atau penggunaan internal.
-
-- **📑 Monitoring & Laporan**  
-  Laporan barang masuk, keluar, dan stok saat ini (bisa difilter).
-
-- **🔔 Notifikasi Stok**  
-  Sistem memberi peringatan jika stok barang mencapai batas minimum.
+Aplikasi ini dibangun menggunakan **PHP Native + MySQL** dan dirancang agar mudah dipahami untuk kebutuhan pembelajaran.
 
 ---
 
-## 3. Aktor dalam Sistem
+## 2.  Fitur Utama
 
-| Aktor           | Tugas                                                                 |
-|----------------|-----------------------------------------------------------------------|
-| **Admin**       | Melihat Data Barang |
-| **Petugas Gudang** | Input transaksi masuk & keluar, kelola data barang.                   |
-| **Manajer**  | Melihat laporan, ambil keputusan terkait stok & pengadaan.            |
+###  Form Pengiriman Paket
+
+* Input data pengirim & penerima
+* Alamat, berat paket, dan tanggal
+* Generate **nomor resi otomatis** (contoh: `LRN123456`)
+* Status default: **Belum Terkirim**
+
+###  Bukti Pengiriman
+
+* Menampilkan detail pengiriman berdasarkan ID
+* Tombol **Cetak Bukti Pengiriman**
+* Template tampilan profesional
+
+###  Tracking Resi
+
+* Pengguna dapat mengecek status pengiriman berdasarkan nomor resi
 
 ---
 
-## 4. Penerapan Konsep OOP
+## 3.  Screenshot Tampilan 
+Halaman Utama Website
+<img width="940" height="588" alt="image" src="https://github.com/user-attachments/assets/def0f28b-5665-41de-9341-c7ae008438fa" />
+Halaman Detail Informasi
+<img width="940" height="583" alt="image" src="https://github.com/user-attachments/assets/5dffab36-6e75-494d-8fa5-2836128ad500" />
+<img width="940" height="528" alt="image" src="https://github.com/user-attachments/assets/d7920201-cfe2-44e5-92e0-63c4d84e1ac6" />
+<img width="940" height="528" alt="image" src="https://github.com/user-attachments/assets/a536fed7-3da4-46b4-8bed-37d1ac56d25e" />
+Halaman Login
+<img width="940" height="588" alt="image" src="https://github.com/user-attachments/assets/bde640c1-dfe3-4a34-ac7f-d2ed3e985b63" />
+Halaman Register
+<img width="940" height="588" alt="image" src="https://github.com/user-attachments/assets/9d9d2ad3-33ec-4ede-82a2-50f40522e59a" />
+Logic If
+<img width="940" height="661" alt="image" src="https://github.com/user-attachments/assets/02484e67-3bbc-4bc6-81d9-ac5ec2faf0ee" />
+Footer Halaman
+<img width="940" height="24" alt="image" src="https://github.com/user-attachments/assets/6dccebf8-eec3-4a55-970d-4d9316f720ed" />
+Crud Api Menggunakan Bruno
+<img width="940" height="588" alt="image" src="https://github.com/user-attachments/assets/d4c8a810-3351-4036-a64c-4a58a269339e" />
 
-### a. Encapsulation (Enkapsulasi)
-
-Menyatukan data dan method dalam kelas. Akses data dikendalikan via getter/setter.
-
-```java
-public class Barang {
-    private String kode;
-    private String nama;
-    private int stok;
-
-    public String getKode() { 
-        return kode; 
-    }
-
-    public void setKode(String kode) { 
-        this.kode = kode;
-    }
-}
-
-```
-b. Inheritance (Pewarisan)
-Subclass mewarisi method dari superclass. Contoh: BarangMasukController mewarisi kontrak dari Initializable.
-
-
-```java
-public class BarangMasukController implements Initializable {
-    // ...
-}
-
-```
-c. Polymorphism (Polimorfisme)
-Method yang sama memberikan respons berbeda tergantung objeknya. Contoh: toString() di-overridden.
-
-```java
-// Di file Barang.java
-@Override
-public String toString() {
-    return getNamaBarang();
-}
-
-// Di file BarangKeluarItem.java
-@Override
-public String toString() {
-    return getNamaBarang();
-}
-
-```
-
-d. Abstraction (Abstraksi)
-Menyembunyikan detail dan hanya menunjukkan antarmuka penting ke pengguna.
-```java
-
-// Di file Barang.java
-public class Barang {
-    private final SimpleStringProperty namaBarang;
-
-    public String getNamaBarang() {
-        return namaBarang.get();
-    }
-}
-
-```
-Dokumentasi aplikasi pbo2 : https://drive.google.com/file/d/1KAPy1WltU9Bp6Pae98y9k-UWomQYSwDv/view
